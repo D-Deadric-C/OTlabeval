@@ -2,14 +2,14 @@
 clc
 clear all
 %% MAX
-M = 1e5;
-c = [1 2 3 0 0 -M -M];
-b = [20; 30];
-A = [1 2 0 1 0 1 0; 3 0 4 0 1 0 1];
+c=[1 2 3 0 0];
+b=[20;30];
+A= [ 1 2 0 1 0; 3 0 4 0 1];
 m = size(A,1);
 n = size(A,2);
 bv_index= n-m+1:1:n
 Y = [A b]
+
 for s=1:50
     cb=c(bv_index);
     Xb=Y(:,end)
@@ -48,4 +48,3 @@ for s=1:50
     end
 end
 % disp(s)
-
